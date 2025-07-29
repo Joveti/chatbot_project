@@ -9,15 +9,23 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 
 # Download NLTK data
+# Download 'punkt' first as it might be used by sent_tokenize before other processing
 nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt_tab') 
+
+# Download the 'popular' NLTK collection. This includes 'averaged_perceptron_tagger', 'wordnet', 'stopwords', etc.
+# If 'popular' still gives issues, you can try 'all' but it's much larger.
+nltk.download('popular')
+
+# You can remove the individual downloads below if 'popular' covers them:
+# nltk.download('averaged_perceptron_tagger') # Now included in 'popular'
+# nltk.download('stopwords') # Now included in 'popular'
+# nltk.download('wordnet') # Now included in 'popular'
 
 # Load and preprocess the Grimm's Fairy Tales text
 with open('grimm_tales.txt', 'r', encoding='utf-8') as f:
     data = f.read()
+
+# ... (rest of your code remains the same) ...
 
 # Split the text into fairy tale sections
 tale_sections = {}
