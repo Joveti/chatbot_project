@@ -13,11 +13,13 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
 nltk.download('wordnet')
-nltk.download('punkt_tab') # <-- This is the crucial one for the current error
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng') 
 
 # Load and preprocess the Grimm's Fairy Tales text
 with open('grimm_tales.txt', 'r', encoding='utf-8') as f:
     data = f.read()
+
 
 # Split the text into fairy tale sections
 tale_sections = {}
